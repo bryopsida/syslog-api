@@ -1,23 +1,25 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { HealthModule } from './health/health.module';
 import { LoggerModule } from 'nestjs-pino';
 import { MercuriusDriver, MercuriusDriverConfig } from '@nestjs/mercurius';
 import { GraphQLModule } from '@nestjs/graphql';
 import { MongooseModule } from '@nestjs/mongoose';
+import { MessageModule } from './messages/message.module';
 
 @Module({
   imports: [
     HealthModule,
+    MessageModule,
     LoggerModule.forRoot(),
-    MongooseModule.forRoot('mongodb://localhost:27017/syslog'),
     GraphQLModule.forRoot<MercuriusDriverConfig>({
       driver: MercuriusDriver,
+      autoSchemaFile: 'schema.gql',
+      subscription: true,
       graphiql: true,
     }),
+    MongooseModule.forRoot('mongodb://localhost:27017/syslog'),
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
