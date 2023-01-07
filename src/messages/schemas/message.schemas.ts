@@ -37,7 +37,9 @@ export enum SEVERITY {
   INFORMATIONAL = 6, // informational messages
   DEBUG = 7, // debug level
 }
-@Schema()
+@Schema({
+  collection: 'messages',
+})
 export class SyslogMessage {
   @Prop()
   timestamp?: Date;

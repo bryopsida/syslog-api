@@ -1,10 +1,24 @@
 import { Injectable } from '@nestjs/common';
 import { MessageArgs } from './dto/message.args';
-import { Message } from './models/message.model';
+import { MessageDocument, SyslogMessage } from './schemas/message.schemas';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
 
 @Injectable()
 export class MessageService {
-  async findAll(args: MessageArgs): Promise<Message[]> {
-    return [] as Message[];
+  constructor(
+    @InjectModel(SyslogMessage.name)
+    private messageModel: Model<MessageDocument>,
+  ) {}
+
+  async findAll(args: MessageArgs): Promise<SyslogMessage[]> {
+    return this.messageModel
+      .find()
+      .sort({
+        timestamp: 'desc',
+      })
+      .limit(args.take)
+      .skip(args.skip)
+      .exec();
   }
 }

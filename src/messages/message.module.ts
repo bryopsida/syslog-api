@@ -12,6 +12,6 @@ import { MessageService } from './message.service';
     ]),
   ],
   controllers: [],
-  providers: [MessageResolver, MessageService, DateScalar],
+  providers: [MessageResolver, MessageService, DateScalar, SyslogMessage],
 })
 export class MessageModule {}
