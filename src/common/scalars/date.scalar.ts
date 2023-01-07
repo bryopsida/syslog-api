@@ -17,6 +17,10 @@ export class DateScalar implements CustomScalar<number, Date> {
     if (ast.kind === Kind.INT) {
       return new Date(ast.value);
     }
+    if (ast.kind === Kind.STRING) {
+      const date = Date.parse(ast.value);
+      if (!isNaN(date)) return new Date(date);
+    }
     return null;
   }
 }

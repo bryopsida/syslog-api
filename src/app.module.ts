@@ -5,9 +5,11 @@ import { MercuriusDriver, MercuriusDriverConfig } from '@nestjs/mercurius';
 import { GraphQLModule } from '@nestjs/graphql';
 import { MongooseModule } from '@nestjs/mongoose';
 import { MessageModule } from './messages/message.module';
+import { CommonModule } from './common/common.module';
 
 @Module({
   imports: [
+    CommonModule,
     HealthModule,
     MessageModule,
     LoggerModule.forRoot(),

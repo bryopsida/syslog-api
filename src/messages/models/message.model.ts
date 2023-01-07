@@ -6,25 +6,37 @@ export class Message {
   @Field()
   timestamp?: Date;
 
-  @Field()
+  @Field({
+    nullable: true,
+  })
   severity: SEVERITY;
 
-  @Field()
+  @Field({
+    nullable: true,
+  })
   facility: FACILITY;
 
   @Field()
   message: string;
 
-  @Field()
+  @Field({
+    nullable: true,
+  })
   app?: string;
 
-  @Field()
+  @Field({
+    nullable: true,
+  })
   procId?: string;
 
-  @Field()
+  @Field({
+    nullable: true,
+  })
   msgId?: string;
 
-  @Field()
+  @Field({
+    nullable: true,
+  })
   hostname?: string;
 
   @Field()

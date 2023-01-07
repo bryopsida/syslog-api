@@ -44,16 +44,22 @@ export class SyslogMessage {
   @Prop()
   timestamp?: Date;
 
-  @Prop()
+  @Prop({
+    required: false,
+  })
   severity: SEVERITY;
 
-  @Prop()
+  @Prop({
+    required: false,
+  })
   facility: FACILITY;
 
   @Prop()
   message: string;
 
-  @Prop()
+  @Prop({
+    required: false,
+  })
   app?: string;
 
   @Prop()
@@ -62,7 +68,9 @@ export class SyslogMessage {
   @Prop()
   msgId?: string;
 
-  @Prop()
+  @Prop({
+    required: false,
+  })
   hostname?: string;
 
   @Prop()
