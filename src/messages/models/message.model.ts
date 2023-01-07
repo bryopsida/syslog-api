@@ -11,4 +11,22 @@ export class Message {
 
   @Field()
   facility: FACILITY;
+
+  @Field()
+  message: string;
+
+  @Field()
+  app?: string;
+
+  @Field()
+  procId?: string;
+
+  @Field()
+  msgId?: string;
+
+  @Field()
+  hostname?: string;
+
+  @Field()
+  modelVersion: number;
 }
