@@ -1,20 +1,23 @@
-import { NotFoundException } from '@nestjs/common';
 import { Args, Context, Query, Resolver, Subscription } from '@nestjs/graphql';
 import { PubSub } from 'mercurius';
 import { MessageArgs } from './dto/message.args';
 import { Message } from './models/message.model';
 import { MessageService } from './message.service';
-
-@Resolver((of) => Message)
+import { UseGuards } from '@nestjs/common';
+import { GqlAuthGuard } from '../authentication/guards/gql-auth.guard';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+@Resolver((_of) => Message)
 export class MessageResolver {
   constructor(private readonly service: MessageService) {}
-
-  @Query((returns) => [Message])
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  @Query((_returns) => [Message])
+  @UseGuards(GqlAuthGuard)
   messages(@Args() args: MessageArgs): Promise<Message[]> {
     return this.service.findAll(args);
   }
-
-  @Subscription((returns) => Message)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  @Subscription((_returns) => Message)
+  @UseGuards(GqlAuthGuard)
   messagesAdded(@Context('pubsub') pubSub: PubSub) {
     return pubSub.subscribe('messagesAdded');
   }

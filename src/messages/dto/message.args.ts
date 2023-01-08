@@ -4,35 +4,37 @@ import { FACILITY, SEVERITY } from '../schemas/message.schemas';
 
 @ArgsType()
 export class MessageArgs {
-  @Field((type) => Int)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  @Field((_type) => Int)
   @Min(0)
   skip = 0;
-
-  @Field((type) => Int)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  @Field((_type) => Int)
   @Min(1)
   @Max(50)
   take = 25;
-
-  @Field((type) => Int, {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  @Field((_type) => Int, {
     nullable: true,
   })
   @Min(0)
   @Max(23)
   facility?: FACILITY;
 
-  @Field((type) => Int, {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  @Field((_type) => Int, {
     nullable: true,
   })
   @Min(0)
   @Max(7)
   severity?: SEVERITY;
-
-  @Field((type) => [String], {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  @Field((_type) => [String], {
     nullable: true,
   })
   apps?: string[];
-
-  @Field((type) => [String], {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  @Field((_type) => [String], {
     nullable: true,
   })
   hostnames?: string[];

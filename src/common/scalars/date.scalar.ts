@@ -1,6 +1,7 @@
 import { CustomScalar, Scalar } from '@nestjs/graphql';
 import { Kind, ValueNode } from 'graphql';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 @Scalar('Date', (type) => Date)
 export class DateScalar implements CustomScalar<number, Date> {
   description = 'Date custom scalar type';
