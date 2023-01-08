@@ -4,7 +4,7 @@ import { MessageArgs } from './dto/message.args';
 import { Message } from './models/message.model';
 import { MessageService } from './message.service';
 import { UseGuards } from '@nestjs/common';
-import { GqlAuthGuard } from 'src/authentication/guards/gql-auth.guard';
+import { GqlAuthGuard } from '../authentication/guards/gql-auth.guard';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 @Resolver((_of) => Message)
 export class MessageResolver {
