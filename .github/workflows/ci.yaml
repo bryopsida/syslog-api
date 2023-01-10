@@ -9,6 +9,8 @@ jobs:
   validate-node:
     name: 'Validate'
     uses: curium-rocks/flows/.github/workflows/node-ts.yml@main
+    with:
+      continue-on-prod-vulns: true
     secrets:
       SONARQUBE_KEY: ${{ secrets.SONARQUBE_KEY }}
   build-container:

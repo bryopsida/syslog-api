@@ -28,4 +28,4 @@ COPY --chown=node:node --from=libraries /usr/src/app/node_modules /usr/src/app/n
 
 COPY --chown=node:node --from=build /usr/src/app/dist/ /usr/src/app/
 EXPOSE 3000
-CMD ["dumb-init", "node", "app.js"]
+CMD ["dumb-init", "node", "main.js"]
