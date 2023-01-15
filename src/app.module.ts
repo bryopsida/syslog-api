@@ -26,7 +26,7 @@ dotenv.config();
     GraphQLModule.forRoot<MercuriusDriverConfig>({
       driver: MercuriusDriver,
       autoSchemaFile: 'schema.gql',
-      subscription: true,
+      subscription: false,
       graphiql: process.env.GRAPHQL_PLAYGROUND_ENABLED
         ? process.env.GRAPHQL_PLAYGROUND_ENABLED.toLowerCase() === 'true'
         : false,
