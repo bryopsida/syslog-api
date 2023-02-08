@@ -34,7 +34,7 @@
     "graphql": "^16.6.0",
     "mercurius": "^10.5.1",
     "mongoose": "^6.8.2",
-    "nestjs-pino": "^3.1.1",
+    "nestjs-pino": "^3.1.2",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",
