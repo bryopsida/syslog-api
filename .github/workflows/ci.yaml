@@ -9,6 +9,10 @@ jobs:
   validate-node:
     name: 'Validate'
     uses: curium-rocks/flows/.github/workflows/node-ts.yml@main
+    permissions:
+      contents: read
+      actions: read
+      security-events: write
     with:
       continue-on-prod-vulns: true
     secrets:
@@ -17,6 +21,11 @@ jobs:
     name: 'Build container image'
     uses: curium-rocks/flows/.github/workflows/oci-build-image.yml@main
     needs: validate-node
+    permissions:
+      contents: read
+      packages: write
+      security-events: write
+      id-token: write
     with:
       registry: ghcr.io/bryopsida
       image_name: syslog-api
