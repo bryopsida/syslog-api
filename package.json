@@ -25,7 +25,7 @@
     "@nestjs/jwt": "^10.0.1",
     "@nestjs/mercurius": "^10.1.7",
     "@nestjs/mongoose": "^9.2.1",
-    "@nestjs/passport": "^9.0.0",
+    "@nestjs/passport": "^9.0.3",
     "@nestjs/platform-fastify": "^9.2.1",
     "@nestjs/terminus": "^9.1.4",
     "argon2": "^0.31.0",
