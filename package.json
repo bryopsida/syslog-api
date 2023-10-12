@@ -19,7 +19,7 @@
   "dependencies": {
     "@fastify/helmet": "^11.0.0",
     "@nestjs/common": "^9.0.0",
-    "@nestjs/config": "^2.3.4",
+    "@nestjs/config": "^3.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/graphql": "^10.1.7",
     "@nestjs/jwt": "^10.0.1",
