@@ -27,7 +27,7 @@
     "@nestjs/mongoose": "^10.0.0",
     "@nestjs/passport": "^10.0.0",
     "@nestjs/platform-fastify": "^10.0.0",
-    "@nestjs/terminus": "^10.0.0",
+    "@nestjs/terminus": "^10.3.0",
     "argon2": "^0.41.0",
     "class-validator": "^0.14.0",
     "fastify": "^4.12.0",
