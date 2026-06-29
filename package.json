@@ -20,7 +20,7 @@
     "@fastify/helmet": "^13.0.0",
     "@nestjs/common": "^10.0.0",
     "@nestjs/config": "^4.0.0",
-    "@nestjs/core": "^10.0.0",
+    "@nestjs/core": "^11.0.0",
     "@nestjs/graphql": "^12.0.0",
     "@nestjs/jwt": "^11.0.0",
     "@nestjs/mercurius": "^12.0.0",
